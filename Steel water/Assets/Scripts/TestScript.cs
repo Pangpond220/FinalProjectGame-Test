@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    Transform player;
+
+    [SerializeField]
+    private int Speed;
+
     void Start()
     {
         int a = 5 + 8;

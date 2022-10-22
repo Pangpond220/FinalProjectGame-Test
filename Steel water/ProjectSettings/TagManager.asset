@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2724549577
+    locked: 0
+  - name: Boat
+    uniqueID: 2750846263
+    locked: 0
+  - name: Player
+    uniqueID: 839552553
+    locked: 0
