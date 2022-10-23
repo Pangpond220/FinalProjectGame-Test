@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementY;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
@@ -25,8 +25,19 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        PlayerMove();
+        AnimatePlayer();
+    }
+
     // Update is called once per frame
-    void Update()
+    void PlayerMove()
     {
         movementX = Input.GetAxis("Horizontal");  // A D
         movementY = Input.GetAxis("Vertical");    // W S
@@ -44,8 +55,14 @@ public class PlayerMovement : MonoBehaviour
         if(movementX > 0)
         {
             anime.SetBool(WALK_ANIMETION, true);
+            sr.flipX = true;
         }
-        if (movementX < 0)
+        else if (movementX < 0)
+        {
+            anime.SetBool(WALK_ANIMETION, true);
+            sr.flipX = false;
+        }
+        else if (movementY < 0 || movementY > 0)
         {
             anime.SetBool(WALK_ANIMETION, true);
         }
