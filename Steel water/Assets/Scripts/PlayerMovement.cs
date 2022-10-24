@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private int speed;
+    private float speed = 10f;
+
+    [SerializeField]
+    private float jumpForce = 11f;
 
     private Animator anime;
     private Rigidbody2D body;
@@ -15,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float movementX;
     private float movementY;
+
+    private bool isGrounded;
+
+    private string GROUND_TAG = "Ground";
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
         AnimatePlayer();
     }
 
+    private void FixedUpdate()
+    {
+        PlayerJump();
+    }
+
     // Update is called once per frame
     void PlayerMove()
     {
@@ -45,9 +57,26 @@ public class PlayerMovement : MonoBehaviour
         Vector2 pos = transform.position;
 
         pos.x += movementX * speed * Time.deltaTime;
-        pos.y += movementY * speed * Time.deltaTime;
+        //pos.y += movementY * speed * Time.deltaTime;
 
         transform.position = pos;
+    }
+
+    void PlayerJump()
+    {
+        if (movementY > 0 && isGrounded)
+        {
+            isGrounded = false;
+            body.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D Collision)
+    {
+        if (Collision.gameObject.CompareTag(GROUND_TAG)) // Check Player on Ground
+        {
+            isGrounded = true;
+        }
     }
 
     void AnimatePlayer()
