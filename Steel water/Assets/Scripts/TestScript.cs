@@ -16,6 +16,10 @@ public class TestScript : MonoBehaviour
         int a = 5 + 8;
         Debug.Log(a);
     }
+    void noting 
+    {
+    
+    }
 
     // Update is called once per frame
     void Update()
