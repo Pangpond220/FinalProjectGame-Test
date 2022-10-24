@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - name: Background
     uniqueID: 2724549577
     locked: 0
-  - name: Boat
+  - name: Ship
     uniqueID: 2750846263
     locked: 0
   - name: Player
