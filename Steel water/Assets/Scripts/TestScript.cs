@@ -23,7 +23,7 @@ public class TestScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        Debug.Log("Yes daddy !!!");
     }
 
     // Update is called once per frame
