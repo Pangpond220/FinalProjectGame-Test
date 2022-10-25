@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
 
     private string GROUND_TAG = "Ground";
+    private string SHIPS_TAG9 = "Ships";
 
     // Start is called before the first frame update
     void Awake()

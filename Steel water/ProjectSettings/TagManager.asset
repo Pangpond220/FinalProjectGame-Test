@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 2724549577
     locked: 0
+  - name: Building
+    uniqueID: 2972733609
+    locked: 0
   - name: Ship
     uniqueID: 2750846263
     locked: 0
