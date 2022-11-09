@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Ships
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -53,4 +55,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 839552553
+    locked: 0
+  - name: Water
+    uniqueID: 2824853029
+    locked: 0
+  - name: UI
+    uniqueID: 1840321799
     locked: 0

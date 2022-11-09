@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
 
     private string GROUND_TAG = "Ground";
-    private string SHIPS_TAG9 = "Ships";
+    private string SHIPS_TAG = "Ships";
 
     // Start is called before the first frame update
     void Awake()
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D Collision)
     {
-        if (Collision.gameObject.CompareTag(GROUND_TAG)) // Check Player on Ground
+        if (Collision.gameObject.CompareTag(GROUND_TAG) || Collision.gameObject.CompareTag(SHIPS_TAG)) // Check Player on Ground
         {
             isGrounded = true;
         }
